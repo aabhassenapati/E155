@@ -9,4 +9,4 @@ categories:
 draft: false
 ---
 
-I will write my reflections here soon.
+I will write my reflections here soon. Starting now....
