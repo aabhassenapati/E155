@@ -1,0 +1,12 @@
+---
+title: "Initial Reflections"
+description: "Here I document my first, thoughts, goals, and some initial reflections about E155 course I am taking this semester"
+author: "Aabhas Senapati"
+date: "8/29/25"
+categories:
+  - reflection
+  - e155
+draft: false
+---
+
+I will write my reflections here soon.

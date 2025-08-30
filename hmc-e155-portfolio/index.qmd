@@ -1,0 +1,17 @@
+---
+title: "E155 Portfolio"
+image: images/headshot.png
+about:
+    template: jolla
+    links: 
+    -   icon: linkedin
+        text: LinkedIn
+        href: https://linkedin.com/in/aabhassenapati
+    -   icon: github
+        text: Github
+        href: https://github.com/aabhassenapati
+---
+
+Aabhas Senapati is a Junior at [Harvey Mudd College](https://hmc.edu), pursuing Independent Program of Study in Ecology, Electronics and Sensing. 
+
+
