@@ -1,4 +1,7 @@
-/hmc-e155-portfolio/_site/
-/hmc-e155-portfolio/.quarto/
-hmc-e155-portfolio/.DS_Store
+_site/
+.quarto/
 .DS_Store
+/_site
+
+/.quarto/
+**/*.quarto_ipynb
