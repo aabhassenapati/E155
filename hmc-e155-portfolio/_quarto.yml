@@ -8,7 +8,12 @@ website:
       - href: index.qmd
         text: Home
       - href: blog.qmd
-        text: Blog
+        text: Blogs
+      - href: labs.qmd
+        text: Labs
+      - href: https://hmc-e155.github.io/
+        text: Resources
+
 
 format:
   html:
