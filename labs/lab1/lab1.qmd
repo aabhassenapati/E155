@@ -1,3 +1,43 @@
 ---
 title: "Lab 1: FPGA and MCU Setup and Testing"
+description: "Here I document my work on the lab 1 of MicroPs, where I work with FPGA and seven segment display"
+date: "9/04/25"
+categories:
+  - labs 
+  - FPGA
+  - e155
+author: Aabhas Senapati
+draft: false
 ---
+
+## Introduction
+
+## Design and Testing Methodology
+
+
+## Technical Documentation
+
+
+### Block Diagram
+![Fig. 1: Block Diagram for top module "lab1_as"](images/lab1_blockdiagram.jpg)
+
+
+### Schematic
+![Fig. 2: Schematic for Hardware Setup](images/lab1_schematic.jpg)
+
+### Code
+
+<script src="https://gist.github.com/aabhassenapati/325d073c983e663e8e830e5004bd5826.js"></script>
+<script src="https://gist.github.com/aabhassenapati/16ce2653c3795fb1a50ec56e48215957.js"></script>
+<script src="https://gist.github.com/aabhassenapati/7fc037ac0eead008a1f5361df9084390.js"></script>
+
+## Results and Discussion
+
+### Testbench Simulation
+<script src="https://gist.github.com/aabhassenapati/21180e3f986d2a953e89ebd3ec94516f.js"></script>
+<script src="https://gist.github.com/aabhassenapati/ccea2950b4c1d826da2e8a799a0c61be.js"></script>
+<script src="https://gist.github.com/aabhassenapati/20b674e8da8a3a392ae64ee7765e8dfb.js"></script>
+
+## Conclusion
+
+## AI Prototype 
