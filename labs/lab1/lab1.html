@@ -6,6 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aabhas Senapati">
+<meta name="dcterms.date" content="2025-09-04">
+<meta name="description" content="Here I document my work on the lab 1 of MicroPs, where I work with FPGA and seven segment display">
 
 <title>Lab 1: FPGA and MCU Setup and Testing – E155 Portfolio</title>
 <style>
@@ -119,8 +122,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#testbench-simulation" id="toc-testbench-simulation" class="nav-link" data-scroll-target="#testbench-simulation">Testbench Simulation</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-prototype" id="toc-ai-prototype" class="nav-link" data-scroll-target="#ai-prototype">AI Prototype</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -128,13 +150,35 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 1: FPGA and MCU Setup and Testing</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">labs</div>
+    <div class="quarto-category">FPGA</div>
+    <div class="quarto-category">e155</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Here I document my work on the lab 1 of MicroPs, where I work with FPGA and seven segment display
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aabhas Senapati </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 4, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -144,8 +188,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<section id="block-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab1_blockdiagram.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 1: Block Diagram for top module “lab1_as”</figcaption>
+</figure>
+</div>
+</section>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab1_schematic.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 2: Schematic for Hardware Setup</figcaption>
+</figure>
+</div>
+</section>
+<section id="code" class="level3">
+<h3 class="anchored" data-anchor-id="code">Code</h3>
+<script src="https://gist.github.com/aabhassenapati/325d073c983e663e8e830e5004bd5826.js"></script>
+<script src="https://gist.github.com/aabhassenapati/16ce2653c3795fb1a50ec56e48215957.js"></script>
+<script src="https://gist.github.com/aabhassenapati/7fc037ac0eead008a1f5361df9084390.js"></script>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<section id="testbench-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="testbench-simulation">Testbench Simulation</h3>
+<script src="https://gist.github.com/aabhassenapati/21180e3f986d2a953e89ebd3ec94516f.js"></script>
+<script src="https://gist.github.com/aabhassenapati/ccea2950b4c1d826da2e8a799a0c61be.js"></script>
+<script src="https://gist.github.com/aabhassenapati/20b674e8da8a3a392ae64ee7765e8dfb.js"></script>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+</section>
+<section id="ai-prototype" class="level2">
+<h2 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

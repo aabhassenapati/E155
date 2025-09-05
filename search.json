@@ -49,6 +49,41 @@
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
+    "objectID": "labs/lab1/lab1.html#design-and-testing-methodology",
+    "href": "labs/lab1/lab1.html#design-and-testing-methodology",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#technical-documentation",
+    "href": "labs/lab1/lab1.html#technical-documentation",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\n\nBlock Diagram\n\n\n\nFig. 1: Block Diagram for top module “lab1_as”\n\n\n\n\nSchematic\n\n\n\nFig. 2: Schematic for Hardware Setup\n\n\n\n\nCode"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#results-and-discussion",
+    "href": "labs/lab1/lab1.html#results-and-discussion",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\nTestbench Simulation"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#conclusion",
+    "href": "labs/lab1/lab1.html#conclusion",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Conclusion",
+    "text": "Conclusion"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#ai-prototype",
+    "href": "labs/lab1/lab1.html#ai-prototype",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "AI Prototype",
+    "text": "AI Prototype"
+  },
+  {
     "objectID": "posts/initial-reflections.html",
     "href": "posts/initial-reflections.html",
     "title": "Initial Reflections",
