@@ -12,32 +12,65 @@ draft: false
 
 ## Introduction
 
-## Design and Testing Methodology
+I this lab I try to design a seven segment display controlled by dip switche and designed the hardware and software for making this project possible.
 
+## Design and Testing Methodology
+ I designed three modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that drive builtin leds and seven segment display. In my led builting module, I used a counter to divide my clock signal from 24Mhz to 2.4 Hz, meanwhile for the other two leds based on the truth table, i implemented the outputs to leds as XOR and AND gates respectively. In the seven segment module I wrote the case based switching based on switch inputs to drive the leds on seven segment, that implements it as combinational logic. I calculated my resistor values by doing Vdd-Vf(led)=IR, i.e. 3.3V - 2.1V = IR, and tried to limit my current below 8mAmps, for convinience I used the 162 Ohm resistor, which satisfies this requirement, as current flowing should be around 7.4 mAmps. The implementation was tested with simulation testbenches on Questa, and also verified on actual hardware built as shown below, using the schematics.
 
 ## Technical Documentation
 
-
 ### Block Diagram
-![Fig. 1: Block Diagram for top module "lab1_as"](images/lab1_blockdiagram.jpg)
+
+![Fig. 1: Block Diagram for top module "lab1_as"](images/lab1_blockdiagram.jpg) 
 
 
 ### Schematic
+
 ![Fig. 2: Schematic for Hardware Setup](images/lab1_schematic.jpg)
 
 ### Code
 
 <script src="https://gist.github.com/aabhassenapati/325d073c983e663e8e830e5004bd5826.js"></script>
+
 <script src="https://gist.github.com/aabhassenapati/16ce2653c3795fb1a50ec56e48215957.js"></script>
+
 <script src="https://gist.github.com/aabhassenapati/7fc037ac0eead008a1f5361df9084390.js"></script>
 
 ## Results and Discussion
 
+![Fig. 3: Hardware Setup working](images/lab1_hardware.jpg)
+
+![Fig. 4: Oscilloscope Trace for BLinking LED](images/oscope_trace_led.jpg)
+
+![Fig. 5: RTL Synthesis for the top module](images/lab1_as_rtl.png)
+
 ### Testbench Simulation
+
 <script src="https://gist.github.com/aabhassenapati/21180e3f986d2a953e89ebd3ec94516f.js"></script>
+
 <script src="https://gist.github.com/aabhassenapati/ccea2950b4c1d826da2e8a799a0c61be.js"></script>
+
 <script src="https://gist.github.com/aabhassenapati/20b674e8da8a3a392ae64ee7765e8dfb.js"></script>
 
+![Fig. n: Waveforms for top module lab1_as](images/waveforms_top_module_lab1_as.png)
+
+![Fig. n: Waveforms for module drive_led_builtin](images/waveforms_module_drive_ledbuiltin.png)
+
+![Fig. n: Waveforms for module drive_seven_seg](images/waveforms_module_drive_sevenseg.png)
+
+![Fig. n: Testbench Output for module lab1_as](images/tb_output_lab1_as.png)
+
+![Fig. n: Testbench Output for module drive_led_builtin](images/tb_output_drive_led_builtin.png)
+
+![Fig. n: Testbench Output for module drive_seven_seg](images/tb_output_drive_seven_seg.png)
+
+
 ## Conclusion
+ I learnt how to use an FPGA and use it to drive external hardware using the GPIO's, and also learning how to deal with the clock divider using counter was a helpful refresher in my learnings from E85. I spent like approximately 15 hours on this lab. I also found it helpful to work on the testbenches to test my implementation of the hardware.
 
 ## AI Prototype 
+
+Upon entering the given prompt the initial AI generated code had an error as it was trying to load an clock/oscillator module that we were possibly missing, but feeding back the error into Claude, it solved it and generated code that was able to synthesize design as below, it solved the issue my writing that primitive module for clock generation by itself instead of using a library. I confirmed the design its the RTL syntehsis and it seemed good to me. I think it kind of shows that AI is a really powerful tool to use in hardware related projects, especially if used by a person how these things piece together and work, which helps in better interacting with I model and the prompts. 
+
+![Fig. n: RTL synthesis for AI generated Code](images/ai_prototype_rtl.png)
+
