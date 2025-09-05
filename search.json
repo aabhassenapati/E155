@@ -88,14 +88,14 @@
     "href": "labs/lab1/lab1.html#conclusion",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Conclusion",
-    "text": "Conclusion\nI learnt how to use an FPGA and use it to drive external hardware using the GPIO’s, and also learning how to deal with the clock divider using counter was a helpful refresher in my learnings from E85. I spent like approximately 15 hours on this lab."
+    "text": "Conclusion\nI learnt how to use an FPGA and use it to drive external hardware using the GPIO’s, and also learning how to deal with the clock divider using counter was a helpful refresher in my learnings from E85. I spent like approximately 15 hours on this lab. I also found it helpful to work on the testbenches to test my implementation of the hardware."
   },
   {
     "objectID": "labs/lab1/lab1.html#ai-prototype",
     "href": "labs/lab1/lab1.html#ai-prototype",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "AI Prototype",
-    "text": "AI Prototype\nThe AI generated code had an error initially trying to load an clock/oscillator module, but feeding back the error into Claude, it solved it and generated code that was able to synthesize design as below.\n\n\n\nFig. n: RTL synthesis for AI generated Code"
+    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code had an error as it was trying to load an clock/oscillator module that we were possibly missing, but feeding back the error into Claude, it solved it and generated code that was able to synthesize design as below, it solved the issue my writing that primitive module for clock generation by itself instead of using a library. I confirmed the design its the RTL syntehsis and it seemed good to me. I think it kind of shows that AI is a really powerful tool to use in hardware related projects, especially if used by a person how these things piece together and work, which helps in better interacting with I model and the prompts.\n\n\n\nFig. n: RTL synthesis for AI generated Code"
   },
   {
     "objectID": "posts/initial-reflections.html",
