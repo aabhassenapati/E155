@@ -49,11 +49,25 @@
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
+    "objectID": "labs/lab1/lab1.html",
+    "href": "labs/lab1/lab1.html",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "I this lab I try to design a seven segment display controlled by dip switche and designed the hardware and software for making this project possible."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#introduction",
+    "href": "labs/lab1/lab1.html#introduction",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "I this lab I try to design a seven segment display controlled by dip switche and designed the hardware and software for making this project possible."
+  },
+  {
     "objectID": "labs/lab1/lab1.html#design-and-testing-methodology",
     "href": "labs/lab1/lab1.html#design-and-testing-methodology",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology"
+    "text": "Design and Testing Methodology\nI designed three modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that drive builtin leds and seven segment display. I calculated my resistor values by doing Vdd-Vf(led)=IR, i.e. 3.3V - 2.1V = IR, and tried to limit my current below 8mAmps, for convinience I used the 162 Ohm resistor, which satisfies this requirement, as current flowing should be around 7.4 mamps."
   },
   {
     "objectID": "labs/lab1/lab1.html#technical-documentation",
@@ -67,21 +81,14 @@
     "href": "labs/lab1/lab1.html#results-and-discussion",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\n\nTestbench Simulation"
-  },
-  {
-    "objectID": "labs/lab1/lab1.html#conclusion",
-    "href": "labs/lab1/lab1.html#conclusion",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
-    "section": "Conclusion",
-    "text": "Conclusion"
+    "text": "Results and Discussion\n  \n\nTestbench Simulation\n\n\n\n  \n   ## Conclusion I learnt how to use an FPGA and use it to drive external hardware using the GPIO’s, and also learning how to deal with the clock divider using counter was a helpful refresher in my learnings from E85. I spent like approximately 15 hours on this lab."
   },
   {
     "objectID": "labs/lab1/lab1.html#ai-prototype",
     "href": "labs/lab1/lab1.html#ai-prototype",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "AI Prototype",
-    "text": "AI Prototype"
+    "text": "AI Prototype\nThe AI generated code had an error initially trying to load an clock/oscillator module, but feeding back the error into Claude, it solved it and generated code that was able to synthesize design as below.\n\n\n\nFig. n: RTL synthesis for AI generated Code"
   },
   {
     "objectID": "posts/initial-reflections.html",
