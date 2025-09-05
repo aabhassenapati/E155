@@ -67,7 +67,7 @@
     "href": "labs/lab1/lab1.html#design-and-testing-methodology",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nI designed three modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that drive builtin leds and seven segment display. I calculated my resistor values by doing Vdd-Vf(led)=IR, i.e. 3.3V - 2.1V = IR, and tried to limit my current below 8mAmps, for convinience I used the 162 Ohm resistor, which satisfies this requirement, as current flowing should be around 7.4 mamps."
+    "text": "Design and Testing Methodology\nI designed three modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that drive builtin leds and seven segment display. In my led builting module, I used a counter to divide my clock signal from 24Mhz to 2.4 Hz, meanwhile for the other two leds based on the truth table, i implemented the outputs to leds as XOR and AND gates respectively. In the seven segment module I wrote the case based switching based on switch inputs to drive the leds on seven segment, that implements it as combinational logic. I calculated my resistor values by doing Vdd-Vf(led)=IR, i.e. 3.3V - 2.1V = IR, and tried to limit my current below 8mAmps, for convinience I used the 162 Ohm resistor, which satisfies this requirement, as current flowing should be around 7.4 mAmps."
   },
   {
     "objectID": "labs/lab1/lab1.html#technical-documentation",
