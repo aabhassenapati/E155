@@ -67,7 +67,7 @@
     "href": "labs/lab1/lab1.html#design-and-testing-methodology",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nI designed three modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that drive builtin leds and seven segment display. In my led builting module, I used a counter to divide my clock signal from 24Mhz to 2.4 Hz, meanwhile for the other two leds based on the truth table, i implemented the outputs to leds as XOR and AND gates respectively. In the seven segment module I wrote the case based switching based on switch inputs to drive the leds on seven segment, that implements it as combinational logic. I calculated my resistor values by doing Vdd-Vf(led)=IR, i.e. 3.3V - 2.1V = IR, and tried to limit my current below 8mAmps, for convinience I used the 162 Ohm resistor, which satisfies this requirement, as current flowing should be around 7.4 mAmps."
+    "text": "Design and Testing Methodology\nI designed three modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that drive builtin leds and seven segment display. In my led builting module, I used a counter to divide my clock signal from 24Mhz to 2.4 Hz, meanwhile for the other two leds based on the truth table, i implemented the outputs to leds as XOR and AND gates respectively. In the seven segment module I wrote the case based switching based on switch inputs to drive the leds on seven segment, that implements it as combinational logic. I calculated my resistor values by doing Vdd-Vf(led)=IR, i.e. 3.3V - 2.1V = IR, and tried to limit my current below 8mAmps, for convinience I used the 162 Ohm resistor, which satisfies this requirement, as current flowing should be around 7.4 mAmps. The implementation was tested with simulation testbenches on Questa, and also verified on actual hardware built as shown below, using the schematics."
   },
   {
     "objectID": "labs/lab1/lab1.html#technical-documentation",
@@ -81,7 +81,14 @@
     "href": "labs/lab1/lab1.html#results-and-discussion",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\n  \n\nTestbench Simulation\n\n\n\n  \n   ## Conclusion I learnt how to use an FPGA and use it to drive external hardware using the GPIO’s, and also learning how to deal with the clock divider using counter was a helpful refresher in my learnings from E85. I spent like approximately 15 hours on this lab."
+    "text": "Results and Discussion\n\n\n\nFig. 3: Hardware Setup working\n\n\n\n\n\nFig. 4: Oscilloscope Trace for BLinking LED\n\n\n\n\n\nFig. 5: RTL Synthesis for the top module\n\n\n\nTestbench Simulation\n\n\n\n\n\n\nFig. n: Waveforms for top module lab1_as\n\n\n\n\n\nFig. n: Waveforms for module drive_led_builtin\n\n\n\n\n\nFig. n: Waveforms for module drive_seven_seg\n\n\n\n\n\nFig. n: Testbench Output for module lab1_as\n\n\n\n\n\nFig. n: Testbench Output for module drive_led_builtin\n\n\n\n\n\nFig. n: Testbench Output for module drive_seven_seg"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#conclusion",
+    "href": "labs/lab1/lab1.html#conclusion",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Conclusion",
+    "text": "Conclusion\nI learnt how to use an FPGA and use it to drive external hardware using the GPIO’s, and also learning how to deal with the clock divider using counter was a helpful refresher in my learnings from E85. I spent like approximately 15 hours on this lab."
   },
   {
     "objectID": "labs/lab1/lab1.html#ai-prototype",
