@@ -53,7 +53,7 @@ I this lab I try to design a dual seven segment display displaying inputs by two
 
 ### Testbench Simulation
 
-<script src="https://gist.github.com/aabhassenapati/e6db441c9c35136d37dde71c436335af.js"></script>
+<script src="https://gist.github.com/aabhassenapati/64006c5b12128208ee966ce214ce5528.js"></script>
 
 <script src="https://gist.github.com/aabhassenapati/c957267a88224dc48163fc1cac914341.js"></script>
 
