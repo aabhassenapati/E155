@@ -6,6 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aabhas Senapati">
+<meta name="dcterms.date" content="2025-09-10">
+<meta name="description" content="Here I document my work on the lab 2 of MicroPs, where I work with FPGA and seven segment display, and switches">
 
 <title>Lab 2: Multiplexed 7-Segment Display – E155 Portfolio</title>
 <style>
@@ -119,8 +122,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#testbench-simulation" id="toc-testbench-simulation" class="nav-link" data-scroll-target="#testbench-simulation">Testbench Simulation</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-prototype" id="toc-ai-prototype" class="nav-link" data-scroll-target="#ai-prototype">AI Prototype</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -128,13 +150,35 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 2: Multiplexed 7-Segment Display</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">labs</div>
+    <div class="quarto-category">FPGA</div>
+    <div class="quarto-category">e155</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Here I document my work on the lab 2 of MicroPs, where I work with FPGA and seven segment display, and switches
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aabhas Senapati </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 10, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -144,8 +188,121 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>I this lab I try to design a dual seven segment display displaying inputs by two 4-bit dip switches, and using only one seven-segment decoder, by time-multiplexing the output.</p>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>I designed four modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal using a counter, add the two switch inputs using a adder, and also a module that drives the dual seven segment display through time multipleixng. In my clock_divider module, I used a counter to divide my clock signal from 24Mhz to 240 Hz. In the four_bit_adder module, I added the two 4-bit switch inputs to give a 5-bit sum output that is displayed on leds. In the dual_sevenseg module a mux switches the inputs to the decoder for seven segment, based on the divided clock signal, and reset.</p>
+<p>My calculations for resistor values used in the circuit to connect leds, seven-segment, and transistors can be found as below.</p>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<section id="block-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab1_blockdiagram.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 1: Block Diagram for top module “lab1_as”</figcaption>
+</figure>
+</div>
+</section>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab1_schematic.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 2: Schematic for Hardware Setup</figcaption>
+</figure>
+</div>
+</section>
+<section id="code" class="level3">
+<h3 class="anchored" data-anchor-id="code">Code</h3>
+<script src="https://gist.github.com/aabhassenapati/325d073c983e663e8e830e5004bd5826.js"></script>
+<script src="https://gist.github.com/aabhassenapati/16ce2653c3795fb1a50ec56e48215957.js"></script>
+<script src="https://gist.github.com/aabhassenapati/7fc037ac0eead008a1f5361df9084390.js"></script>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab1_hardware.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 3: Hardware Setup working</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope_trace_led.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 4: Oscilloscope Trace for BLinking LED</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab1_as_rtl.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 5: RTL Synthesis for the top module</figcaption>
+</figure>
+</div>
+<section id="testbench-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="testbench-simulation">Testbench Simulation</h3>
+<script src="https://gist.github.com/aabhassenapati/21180e3f986d2a953e89ebd3ec94516f.js"></script>
+<script src="https://gist.github.com/aabhassenapati/ccea2950b4c1d826da2e8a799a0c61be.js"></script>
+<script src="https://gist.github.com/aabhassenapati/20b674e8da8a3a392ae64ee7765e8dfb.js"></script>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/waveforms_top_module_lab1_as.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Waveforms for top module lab1_as</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/waveforms_module_drive_ledbuiltin.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Waveforms for module drive_led_builtin</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/waveforms_module_drive_sevenseg.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Waveforms for module drive_seven_seg</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_output_lab1_as.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Testbench Output for module lab1_as</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_output_drive_led_builtin.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Testbench Output for module drive_led_builtin</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_output_drive_seven_seg.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Testbench Output for module drive_seven_seg</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>I learnt how to use an FPGA and to time-multiplex outputs and drive multiple hardware periperhals using same internal hardware. I spent like approximately 15 hours on this lab. I also found it helpful to modularize my code to make it easier to have full coverage on modules, and better idiomatic representation of logic.</p>
+</section>
+<section id="ai-prototype" class="level2">
+<h2 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h2>
+<p>Upon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ai_prototype_rtl.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: RTL synthesis for AI generated Code</figcaption>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
