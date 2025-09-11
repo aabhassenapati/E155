@@ -1,3 +1,80 @@
 ---
 title: "Lab 2: Multiplexed 7-Segment Display"
+description: "Here I document my work on the lab 2 of MicroPs, where I work with FPGA and seven segment display, and switches"
+date: "09/10/25"
+categories:
+  - labs 
+  - FPGA
+  - e155
+author: Aabhas Senapati
+draft: false
 ---
+
+## Introduction
+
+I this lab I try to design a dual seven segment display displaying inputs by two 4-bit dip switches, and using only one seven-segment decoder, by time-multiplexing the output.
+
+## Design and Testing Methodology
+ I designed four modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal using a counter, add the two switch inputs using a adder, and also a module that drives the dual seven segment display through time multipleixng. In my clock_divider module, I used a counter to divide my clock signal from 24Mhz to 240 Hz. In the four_bit_adder module, I added the two 4-bit switch inputs to give a 5-bit sum output that is displayed on leds. In the dual_sevenseg module a mux switches the inputs to the decoder for seven segment, based on the divided clock signal, and reset. 
+ 
+ My calculations for resistor values used in the circuit to connect leds, seven-segment, and transistors can be found as below.
+
+
+
+## Technical Documentation
+
+### Block Diagram
+
+![Fig. 1: Block Diagram for top module "lab1_as"](images/lab1_blockdiagram.jpg) 
+
+
+### Schematic
+
+![Fig. 2: Schematic for Hardware Setup](images/lab1_schematic.jpg)
+
+### Code
+
+<script src="https://gist.github.com/aabhassenapati/325d073c983e663e8e830e5004bd5826.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/16ce2653c3795fb1a50ec56e48215957.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/7fc037ac0eead008a1f5361df9084390.js"></script>
+
+## Results and Discussion
+
+![Fig. 3: Hardware Setup working](images/lab1_hardware.jpg)
+
+![Fig. 4: Oscilloscope Trace for BLinking LED](images/oscope_trace_led.jpg)
+
+![Fig. 5: RTL Synthesis for the top module](images/lab1_as_rtl.png)
+
+### Testbench Simulation
+
+<script src="https://gist.github.com/aabhassenapati/21180e3f986d2a953e89ebd3ec94516f.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/ccea2950b4c1d826da2e8a799a0c61be.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/20b674e8da8a3a392ae64ee7765e8dfb.js"></script>
+
+![Fig. n: Waveforms for top module lab1_as](images/waveforms_top_module_lab1_as.png)
+
+![Fig. n: Waveforms for module drive_led_builtin](images/waveforms_module_drive_ledbuiltin.png)
+
+![Fig. n: Waveforms for module drive_seven_seg](images/waveforms_module_drive_sevenseg.png)
+
+![Fig. n: Testbench Output for module lab1_as](images/tb_output_lab1_as.png)
+
+![Fig. n: Testbench Output for module drive_led_builtin](images/tb_output_drive_led_builtin.png)
+
+![Fig. n: Testbench Output for module drive_seven_seg](images/tb_output_drive_seven_seg.png)
+
+
+## Conclusion
+ I learnt how to use an FPGA and to time-multiplex outputs and drive multiple hardware periperhals using same internal hardware. I spent like approximately 15 hours on this lab. I also found it helpful to modularize my code to make it easier to have full coverage on modules, and better idiomatic representation of logic.
+
+## AI Prototype 
+
+Upon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.
+
+![Fig. n: RTL synthesis for AI generated Code](images/ai_prototype_rtl.png)
+
