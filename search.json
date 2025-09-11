@@ -88,7 +88,7 @@
     "href": "labs/lab2/lab2.html#conclusion",
     "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "Conclusion",
-    "text": "Conclusion\nI learnt how to use an FPGA and to time-multiplex outputs and drive multiple hardware periperhals using same internal hardware. I spent like approximately 15 hours on this lab. I also found it helpful to modularize my code to make it easier to have full coverage on modules, and better idiomatic representation of logic."
+    "text": "Conclusion\nI was able to succesfully achieve all the goals for this lab to display sum of two switch inputs on leds, and time-multiplexed display of inputs on the dual seven segment. I learnt how to use an FPGA and to time-multiplex outputs and drive multiple hardware periperhals using same internal hardware. I spent like approximately 15 hours on this lab. I also found it helpful to modularize my code to make it easier to have full coverage on modules, and better idiomatic representation of logic."
   },
   {
     "objectID": "labs/lab2/lab2.html#ai-prototype",
