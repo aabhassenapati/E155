@@ -61,27 +61,27 @@ I this lab I try to design a dual seven segment display displaying inputs by two
 
 <script src="https://gist.github.com/aabhassenapati/738948fdabd36d9d46bafcc7f725b76d.js"></script>
 
-![Fig. n: Waveforms for top module lab2_as](images/waveforms_lab2_as.png)
+![Fig. 6: Waveforms for top module lab2_as](images/waveforms_lab2_as.png)
 
-![Fig. n: Waveforms for module clock_divider](images/waveforms_clockdivider.png)
+![Fig. 7: Waveforms for module clock_divider](images/waveforms_clockdivider.png)
 
-![Fig. n: Waveforms for module four_bit_adder](images/waveforms_fourbitadder.png)
+![Fig. 8: Waveforms for module four_bit_adder](images/waveforms_fourbitadder.png)
 
-![Fig. n: Waveforms for module drive_dual_sevenseg](images/waveforms_dualsevenseg.png)
+![Fig. 9: Waveforms for module drive_dual_sevenseg](images/waveforms_dualsevenseg.png)
 
 ![](images/tbout1_lab2_as.png)
 
-![Fig. n: Testbench Output for module lab2_as](images/tbout2_lab2_as.png)
+![Fig. 10: Testbench Output for module lab2_as](images/tbout2_lab2_as.png)
 
-![Fig. n: Testbench Output for module clock_divider](images/tbout_clockdivider.png)
+![Fig. 11: Testbench Output for module clock_divider](images/tbout_clockdivider.png)
 
-![Fig. n: Testbench Output for module four_bit_adder](images/tbout_fourbitadder.png)
+![Fig. 12: Testbench Output for module four_bit_adder](images/tbout_fourbitadder.png)
 
-![Fig. n: Testbench Output for module drive_dual_sevenseg](images/tbout_drivedualsevenseg.png)
+![Fig. 13: Testbench Output for module drive_dual_sevenseg](images/tbout_drivedualsevenseg.png)
 
 
 ## Conclusion
- I learnt how to use an FPGA and to time-multiplex outputs and drive multiple hardware periperhals using same internal hardware. I spent like approximately 15 hours on this lab. I also found it helpful to modularize my code to make it easier to have full coverage on modules, and better idiomatic representation of logic.
+ I was able to succesfully achieve all the goals for this lab to display sum of two switch inputs on leds, and time-multiplexed display of inputs on the dual seven segment. I learnt how to use an FPGA and to time-multiplex outputs and drive multiple hardware periperhals using same internal hardware. I spent like approximately 15 hours on this lab. I also found it helpful to modularize my code to make it easier to have full coverage on modules, and better idiomatic representation of logic.
 
 ## AI Prototype 
 
@@ -89,5 +89,5 @@ Upon entering the given prompt the initial AI generated code that syntehsized on
 
 ![](images/ai_rtl1.png)
 
-![Fig. n: RTL synthesis for AI generated Code](images/ai_rtl2.png)
+![Fig. 14: RTL synthesis for AI generated Code](images/ai_rtl2.png)
 
