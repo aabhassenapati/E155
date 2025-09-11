@@ -81,7 +81,7 @@
     "href": "labs/lab2/lab2.html#results-and-discussion",
     "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\n\n\n\nFig. 4: Hardware Setup working\n\n\n\n\n\nFig. 5: RTL Synthesis for the top module\n\n\n\nTestbench Simulation\n\n\n\n\n\n\n\nFig. n: Waveforms for top module lab2_as\n\n\n\n\n\nFig. n: Waveforms for module clock_divider\n\n\n\n\n\nFig. n: Waveforms for module four_bit_adder\n\n\n\n\n\nFig. n: Waveforms for module drive_dual_sevenseg\n\n\n\n\n\n\nFig. n: Testbench Output for module lab2_as\n\n\n\n\n\nFig. n: Testbench Output for module clock_divider\n\n\n\n\n\nFig. n: Testbench Output for module four_bit_adder\n\n\n\n\n\nFig. n: Testbench Output for module drive_dual_sevenseg"
+    "text": "Results and Discussion\n\n\n\nFig. 4: Hardware Setup working\n\n\n\n\n\nFig. 5: RTL Synthesis for the top module\n\n\n\nTestbench Simulation\n\n\n\n\n\n\n\nFig. 6: Waveforms for top module lab2_as\n\n\n\n\n\nFig. 7: Waveforms for module clock_divider\n\n\n\n\n\nFig. 8: Waveforms for module four_bit_adder\n\n\n\n\n\nFig. 9: Waveforms for module drive_dual_sevenseg\n\n\n\n\n\n\nFig. 10: Testbench Output for module lab2_as\n\n\n\n\n\nFig. 11: Testbench Output for module clock_divider\n\n\n\n\n\nFig. 12: Testbench Output for module four_bit_adder\n\n\n\n\n\nFig. 13: Testbench Output for module drive_dual_sevenseg"
   },
   {
     "objectID": "labs/lab2/lab2.html#conclusion",
@@ -95,7 +95,7 @@
     "href": "labs/lab2/lab2.html#ai-prototype",
     "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "AI Prototype",
-    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.\n\n\n\n\nFig. n: RTL synthesis for AI generated Code"
+    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.\n\n\n\n\nFig. 14: RTL synthesis for AI generated Code"
   },
   {
     "objectID": "labs/lab1/lab1.html",
