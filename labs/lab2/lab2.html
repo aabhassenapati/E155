@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
   <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#hdl-code" id="toc-hdl-code" class="nav-link" data-scroll-target="#hdl-code">HDL Code</a></li>
   </ul></li>
   <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a>
   <ul class="collapse">
@@ -196,6 +196,13 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
 <p>I designed four modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal using a counter, add the two switch inputs using a adder, and also a module that drives the dual seven segment display through time multipleixng. In my clock_divider module, I used a counter to divide my clock signal from 24Mhz to 240 Hz. In the four_bit_adder module, I added the two 4-bit switch inputs to give a 5-bit sum output that is displayed on leds. In the dual_sevenseg module a mux switches the inputs to the decoder for seven segment, based on the divided clock signal, and reset.</p>
 <p>My calculations for resistor values used in the circuit to connect leds, seven-segment, and transistors can be found as below.</p>
+<p><img src="images/lab2_calculation0.jpg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab2_calculation1.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 1: Calculations for resistor values</figcaption>
+</figure>
+</div>
 </section>
 <section id="technical-documentation" class="level2">
 <h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
@@ -203,8 +210,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/lab1_blockdiagram.jpg" class="img-fluid figure-img"></p>
-<figcaption>Fig. 1: Block Diagram for top module “lab1_as”</figcaption>
+<p><img src="images/lab2_block_diagram.PNG" class="img-fluid figure-img"></p>
+<figcaption>Fig. 2: Block Diagram for top module “lab2_as”</figcaption>
 </figure>
 </div>
 </section>
@@ -212,77 +219,86 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/lab1_schematic.jpg" class="img-fluid figure-img"></p>
-<figcaption>Fig. 2: Schematic for Hardware Setup</figcaption>
+<p><img src="images/lab2_schematic.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 3: Schematic for Hardware Setup</figcaption>
 </figure>
 </div>
 </section>
-<section id="code" class="level3">
-<h3 class="anchored" data-anchor-id="code">Code</h3>
-<script src="https://gist.github.com/aabhassenapati/325d073c983e663e8e830e5004bd5826.js"></script>
-<script src="https://gist.github.com/aabhassenapati/16ce2653c3795fb1a50ec56e48215957.js"></script>
-<script src="https://gist.github.com/aabhassenapati/7fc037ac0eead008a1f5361df9084390.js"></script>
+<section id="hdl-code" class="level3">
+<h3 class="anchored" data-anchor-id="hdl-code">HDL Code</h3>
+<script src="https://gist.github.com/aabhassenapati/8292540d567c86b1a9fa6bcd80691cf6.js"></script>
+<script src="https://gist.github.com/aabhassenapati/d514cc5fcf40c792587ba487f43fd8a0.js"></script>
+<script src="https://gist.github.com/aabhassenapati/0cc3858ce7655cc5bff423ddea69b84f.js"></script>
+<script src="https://gist.github.com/aabhassenapati/d3e50ed0126c695184ec5f469593ded2.js"></script>
 </section>
 </section>
 <section id="results-and-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/lab1_hardware.jpg" class="img-fluid figure-img"></p>
-<figcaption>Fig. 3: Hardware Setup working</figcaption>
+<p><img src="images/lab2_hardware.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 4: Hardware Setup working</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/oscope_trace_led.jpg" class="img-fluid figure-img"></p>
-<figcaption>Fig. 4: Oscilloscope Trace for BLinking LED</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lab1_as_rtl.png" class="img-fluid figure-img"></p>
+<p><img src="images/rtl_lab2.png" class="img-fluid figure-img"></p>
 <figcaption>Fig. 5: RTL Synthesis for the top module</figcaption>
 </figure>
 </div>
 <section id="testbench-simulation" class="level3">
 <h3 class="anchored" data-anchor-id="testbench-simulation">Testbench Simulation</h3>
-<script src="https://gist.github.com/aabhassenapati/21180e3f986d2a953e89ebd3ec94516f.js"></script>
-<script src="https://gist.github.com/aabhassenapati/ccea2950b4c1d826da2e8a799a0c61be.js"></script>
-<script src="https://gist.github.com/aabhassenapati/20b674e8da8a3a392ae64ee7765e8dfb.js"></script>
+<script src="https://gist.github.com/aabhassenapati/e6db441c9c35136d37dde71c436335af.js"></script>
+<script src="https://gist.github.com/aabhassenapati/c957267a88224dc48163fc1cac914341.js"></script>
+<script src="https://gist.github.com/aabhassenapati/6b770a0b25f3c524a86fcd93673206ef.js"></script>
+<script src="https://gist.github.com/aabhassenapati/738948fdabd36d9d46bafcc7f725b76d.js"></script>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/waveforms_top_module_lab1_as.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. n: Waveforms for top module lab1_as</figcaption>
+<p><img src="images/waveforms_lab2_as.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Waveforms for top module lab2_as</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/waveforms_module_drive_ledbuiltin.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. n: Waveforms for module drive_led_builtin</figcaption>
+<p><img src="images/waveforms_clockdivider.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Waveforms for module clock_divider</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/waveforms_module_drive_sevenseg.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. n: Waveforms for module drive_seven_seg</figcaption>
+<p><img src="images/waveforms_fourbitadder.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Waveforms for module four_bit_adder</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/tb_output_lab1_as.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. n: Testbench Output for module lab1_as</figcaption>
+<p><img src="images/waveforms_dualsevenseg.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Waveforms for module drive_dual_sevenseg</figcaption>
+</figure>
+</div>
+<p><img src="images/tbout1_lab2_as.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tbout2_lab2_as.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Testbench Output for module lab2_as</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/tb_output_drive_led_builtin.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. n: Testbench Output for module drive_led_builtin</figcaption>
+<p><img src="images/tbout_clockdivider.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Testbench Output for module clock_divider</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/tb_output_drive_seven_seg.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. n: Testbench Output for module drive_seven_seg</figcaption>
+<p><img src="images/tbout_fourbitadder.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Testbench Output for module four_bit_adder</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tbout_drivedualsevenseg.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. n: Testbench Output for module drive_dual_sevenseg</figcaption>
 </figure>
 </div>
 </section>
@@ -294,9 +310,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="ai-prototype" class="level2">
 <h2 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h2>
 <p>Upon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.</p>
+<p><img src="images/ai_rtl1.png" class="img-fluid"></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/ai_prototype_rtl.png" class="img-fluid figure-img"></p>
+<p><img src="images/ai_rtl2.png" class="img-fluid figure-img"></p>
 <figcaption>Fig. n: RTL synthesis for AI generated Code</figcaption>
 </figure>
 </div>

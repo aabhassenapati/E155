@@ -67,21 +67,21 @@
     "href": "labs/lab2/lab2.html#design-and-testing-methodology",
     "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nI designed four modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal using a counter, add the two switch inputs using a adder, and also a module that drives the dual seven segment display through time multipleixng. In my clock_divider module, I used a counter to divide my clock signal from 24Mhz to 240 Hz. In the four_bit_adder module, I added the two 4-bit switch inputs to give a 5-bit sum output that is displayed on leds. In the dual_sevenseg module a mux switches the inputs to the decoder for seven segment, based on the divided clock signal, and reset.\nMy calculations for resistor values used in the circuit to connect leds, seven-segment, and transistors can be found as below."
+    "text": "Design and Testing Methodology\nI designed four modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal using a counter, add the two switch inputs using a adder, and also a module that drives the dual seven segment display through time multipleixng. In my clock_divider module, I used a counter to divide my clock signal from 24Mhz to 240 Hz. In the four_bit_adder module, I added the two 4-bit switch inputs to give a 5-bit sum output that is displayed on leds. In the dual_sevenseg module a mux switches the inputs to the decoder for seven segment, based on the divided clock signal, and reset.\nMy calculations for resistor values used in the circuit to connect leds, seven-segment, and transistors can be found as below.\n\n\n\n\nFig. 1: Calculations for resistor values"
   },
   {
     "objectID": "labs/lab2/lab2.html#technical-documentation",
     "href": "labs/lab2/lab2.html#technical-documentation",
     "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "Technical Documentation",
-    "text": "Technical Documentation\n\nBlock Diagram\n\n\n\nFig. 1: Block Diagram for top module “lab1_as”\n\n\n\n\nSchematic\n\n\n\nFig. 2: Schematic for Hardware Setup\n\n\n\n\nCode"
+    "text": "Technical Documentation\n\nBlock Diagram\n\n\n\nFig. 2: Block Diagram for top module “lab2_as”\n\n\n\n\nSchematic\n\n\n\nFig. 3: Schematic for Hardware Setup\n\n\n\n\nHDL Code"
   },
   {
     "objectID": "labs/lab2/lab2.html#results-and-discussion",
     "href": "labs/lab2/lab2.html#results-and-discussion",
     "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\n\n\n\nFig. 3: Hardware Setup working\n\n\n\n\n\nFig. 4: Oscilloscope Trace for BLinking LED\n\n\n\n\n\nFig. 5: RTL Synthesis for the top module\n\n\n\nTestbench Simulation\n\n\n\n\n\n\nFig. n: Waveforms for top module lab1_as\n\n\n\n\n\nFig. n: Waveforms for module drive_led_builtin\n\n\n\n\n\nFig. n: Waveforms for module drive_seven_seg\n\n\n\n\n\nFig. n: Testbench Output for module lab1_as\n\n\n\n\n\nFig. n: Testbench Output for module drive_led_builtin\n\n\n\n\n\nFig. n: Testbench Output for module drive_seven_seg"
+    "text": "Results and Discussion\n\n\n\nFig. 4: Hardware Setup working\n\n\n\n\n\nFig. 5: RTL Synthesis for the top module\n\n\n\nTestbench Simulation\n\n\n\n\n\n\n\nFig. n: Waveforms for top module lab2_as\n\n\n\n\n\nFig. n: Waveforms for module clock_divider\n\n\n\n\n\nFig. n: Waveforms for module four_bit_adder\n\n\n\n\n\nFig. n: Waveforms for module drive_dual_sevenseg\n\n\n\n\n\n\nFig. n: Testbench Output for module lab2_as\n\n\n\n\n\nFig. n: Testbench Output for module clock_divider\n\n\n\n\n\nFig. n: Testbench Output for module four_bit_adder\n\n\n\n\n\nFig. n: Testbench Output for module drive_dual_sevenseg"
   },
   {
     "objectID": "labs/lab2/lab2.html#conclusion",
@@ -95,7 +95,7 @@
     "href": "labs/lab2/lab2.html#ai-prototype",
     "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "AI Prototype",
-    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.\n\n\n\nFig. n: RTL synthesis for AI generated Code"
+    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.\n\n\n\n\nFig. n: RTL synthesis for AI generated Code"
   },
   {
     "objectID": "labs/lab1/lab1.html",
