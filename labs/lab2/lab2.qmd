@@ -19,54 +19,65 @@ I this lab I try to design a dual seven segment display displaying inputs by two
  
  My calculations for resistor values used in the circuit to connect leds, seven-segment, and transistors can be found as below.
 
+![](images/lab2_calculation0.jpg) 
 
+![Fig. 1: Calculations for resistor values](images/lab2_calculation1.jpg)
 
 ## Technical Documentation
 
 ### Block Diagram
 
-![Fig. 1: Block Diagram for top module "lab1_as"](images/lab1_blockdiagram.jpg) 
+![Fig. 2: Block Diagram for top module "lab2_as"](images/lab2_block_diagram.PNG) 
 
 
 ### Schematic
 
-![Fig. 2: Schematic for Hardware Setup](images/lab1_schematic.jpg)
+![Fig. 3: Schematic for Hardware Setup](images/lab2_schematic.jpg)
 
-### Code
+### HDL Code
 
-<script src="https://gist.github.com/aabhassenapati/325d073c983e663e8e830e5004bd5826.js"></script>
+<script src="https://gist.github.com/aabhassenapati/8292540d567c86b1a9fa6bcd80691cf6.js"></script>
 
-<script src="https://gist.github.com/aabhassenapati/16ce2653c3795fb1a50ec56e48215957.js"></script>
+<script src="https://gist.github.com/aabhassenapati/d514cc5fcf40c792587ba487f43fd8a0.js"></script>
 
-<script src="https://gist.github.com/aabhassenapati/7fc037ac0eead008a1f5361df9084390.js"></script>
+<script src="https://gist.github.com/aabhassenapati/0cc3858ce7655cc5bff423ddea69b84f.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/d3e50ed0126c695184ec5f469593ded2.js"></script>
 
 ## Results and Discussion
 
-![Fig. 3: Hardware Setup working](images/lab1_hardware.jpg)
+![Fig. 4: Hardware Setup working](images/lab2_hardware.png)
 
-![Fig. 4: Oscilloscope Trace for BLinking LED](images/oscope_trace_led.jpg)
 
-![Fig. 5: RTL Synthesis for the top module](images/lab1_as_rtl.png)
+![Fig. 5: RTL Synthesis for the top module](images/rtl_lab2.png)
 
 ### Testbench Simulation
 
-<script src="https://gist.github.com/aabhassenapati/21180e3f986d2a953e89ebd3ec94516f.js"></script>
+<script src="https://gist.github.com/aabhassenapati/e6db441c9c35136d37dde71c436335af.js"></script>
 
-<script src="https://gist.github.com/aabhassenapati/ccea2950b4c1d826da2e8a799a0c61be.js"></script>
+<script src="https://gist.github.com/aabhassenapati/c957267a88224dc48163fc1cac914341.js"></script>
 
-<script src="https://gist.github.com/aabhassenapati/20b674e8da8a3a392ae64ee7765e8dfb.js"></script>
+<script src="https://gist.github.com/aabhassenapati/6b770a0b25f3c524a86fcd93673206ef.js"></script>
 
-![Fig. n: Waveforms for top module lab1_as](images/waveforms_top_module_lab1_as.png)
+<script src="https://gist.github.com/aabhassenapati/738948fdabd36d9d46bafcc7f725b76d.js"></script>
 
-![Fig. n: Waveforms for module drive_led_builtin](images/waveforms_module_drive_ledbuiltin.png)
+![Fig. n: Waveforms for top module lab2_as](images/waveforms_lab2_as.png)
 
-![Fig. n: Waveforms for module drive_seven_seg](images/waveforms_module_drive_sevenseg.png)
+![Fig. n: Waveforms for module clock_divider](images/waveforms_clockdivider.png)
 
-![Fig. n: Testbench Output for module lab1_as](images/tb_output_lab1_as.png)
+![Fig. n: Waveforms for module four_bit_adder](images/waveforms_fourbitadder.png)
 
-![Fig. n: Testbench Output for module drive_led_builtin](images/tb_output_drive_led_builtin.png)
+![Fig. n: Waveforms for module drive_dual_sevenseg](images/waveforms_dualsevenseg.png)
 
-![Fig. n: Testbench Output for module drive_seven_seg](images/tb_output_drive_seven_seg.png)
+![](images/tbout1_lab2_as.png)
+
+![Fig. n: Testbench Output for module lab2_as](images/tbout2_lab2_as.png)
+
+![Fig. n: Testbench Output for module clock_divider](images/tbout_clockdivider.png)
+
+![Fig. n: Testbench Output for module four_bit_adder](images/tbout_fourbitadder.png)
+
+![Fig. n: Testbench Output for module drive_dual_sevenseg](images/tbout_drivedualsevenseg.png)
 
 
 ## Conclusion
@@ -76,5 +87,7 @@ I this lab I try to design a dual seven segment display displaying inputs by two
 
 Upon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code.
 
-![Fig. n: RTL synthesis for AI generated Code](images/ai_prototype_rtl.png)
+![](images/ai_rtl1.png)
+
+![Fig. n: RTL synthesis for AI generated Code](images/ai_rtl2.png)
 
