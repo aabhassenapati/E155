@@ -49,10 +49,44 @@ I think my design was pretty simple to think about in terms of logical flow, and
 
 [Can be found on github repository](https://github.com/aabhassenapati/E155-labs/tree/main/lab3/fpga)
 
+<script src="https://gist.github.com/aabhassenapati/ee0b474a1e443da6c27e01b50863a6a4.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/f392c8c00f720906aad23f97a5dc2fe7.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/3030b4ccc1fb40591c4cf6c6757a5763.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/88ab956f47daf057dbb98d1782bce34d.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/c5f693f55bd82e467f2caed40f9ea3bb.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/671965134589f05adcb682a3042d2def.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/eb130264653f9d598157c969648f2d8e.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/003b4185fc147017ba1eb1614972f10d.js"></script>
+
 ## Results and Discussion
 
 ![Fig. 6: Hardware Setup working](images/lab3_hardware.png)
 
+
+### Testbench Code
+
+<script src="https://gist.github.com/aabhassenapati/05684ebe99fc8d3598e5f9617e9d0335.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/a930bbff9b18c8952f9027760ec21df6.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/28eb8e87326967665c2add7923b7b0ca.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/bf61242a2d0f35bce734e713e311f105.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/36026a85a9bf496162fbe91cb3853999.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/fe3921921a3ff91c4456162e6a51254d.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/9af99285258e4322a4ebfeed54115c20.js"></script>
+
+<script src="https://gist.github.com/aabhassenapati/1abeac2c4f45b04c5d874fb13d335c5a.js"></script>
 
 ### Testbench Simulation Results
 
