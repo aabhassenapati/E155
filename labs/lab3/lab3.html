@@ -6,6 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aabhas Senapati">
+<meta name="dcterms.date" content="2025-09-18">
+<meta name="description" content="Here I document my work on the lab 3 of MicroPs, where I work with FPGA and a 4*4 keypad to display digits on a dual seven segment display.">
 
 <title>Lab 3: Keypad Scanner – E155 Portfolio</title>
 <style>
@@ -119,8 +122,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#state-transition-diagram-and-table" id="toc-state-transition-diagram-and-table" class="nav-link" data-scroll-target="#state-transition-diagram-and-table">State Transition Diagram and Table</a></li>
+  <li><a href="#hdl-code" id="toc-hdl-code" class="nav-link" data-scroll-target="#hdl-code">HDL Code</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#testbench-simulation-results" id="toc-testbench-simulation-results" class="nav-link" data-scroll-target="#testbench-simulation-results">Testbench Simulation Results</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-prototype" id="toc-ai-prototype" class="nav-link" data-scroll-target="#ai-prototype">AI Prototype</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -128,13 +151,35 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 3: Keypad Scanner</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">labs</div>
+    <div class="quarto-category">FPGA</div>
+    <div class="quarto-category">e155</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Here I document my work on the lab 3 of MicroPs, where I work with FPGA and a 4*4 keypad to display digits on a dual seven segment display.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aabhas Senapati </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 18, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -144,8 +189,188 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>I this lab I try to design a system that can read inputs from a 4*4 keypad through debouncing the inputs, and display the entered digits with time multiplexing on a dual seven segment display displaying inputs.</p>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>I designed 8 modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal into lower frequencies as need, module to have counters keeping track of what keys are pressed, and fsm module that determine which key press to assert and synchronize it to the display, and module to drive the segment enablers and digits.</p>
+<p>My specific design approach was to power the 4 rows of the keypad one by one on a divide by 4 counter, and then read all the four corresponding column inputs while powering the respective rows, and check if the switch is pressed by looking for a high and increment a counter. My logic for the debouncing of switch press, to detect it accurately was that, if my sampling is fast enough (24Mhz, lower should also work), and the sampling period appropriately small enough chosen (50ms/20Hz), to reset the counters, I can find out which key was pressed, based on the counter with highest value, that would be the actual key pressed, as if any key is pressed later, it would have a lower counter value for being detected as on. The highest counter value is then provided to the keypress detection fsm which when the highest counter is above a certain threshold, it registers it as a valid input, and makes it a locked counter, and outputs a key_pressed pulse, and the key id and gives it to the display moudle. This helps both debounce and synchronize the inputs into our system before they reach the segments. The fsm stays in locked state, untill the locked key has counter value above threshold, and when it goes below threshold it registers it as switch release and thus goes back to idle state to detect new inputs. For the segments, I drive the multiplexer at 240Hz, to enable one segment on clock high and other on low, and then the key pressed pulse, and key_pressed signals from the fsm go to the segment display to update the digits each time a new key press is detected.</p>
+<p>My calculations for resistor values used in the circuit to connect inputs, seven-segment, and transistors can be found as below.</p>
+<p><img src="images/lab2_calculation1.jpg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab2_calculation1.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 1: Calculations for resistor values</figcaption>
+</figure>
+</div>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<section id="block-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab3_block_diagram.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 2: Block Diagram for top module “lab2_as”</figcaption>
+</figure>
+</div>
+</section>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab3_schematic.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 3: Schematic for Hardware Setup</figcaption>
+</figure>
+</div>
+</section>
+<section id="state-transition-diagram-and-table" class="level3">
+<h3 class="anchored" data-anchor-id="state-transition-diagram-and-table">State Transition Diagram and Table</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fsm.jpg" class="img-fluid figure-img"></p>
+<figcaption>Figure. 4 State Transition Diagram for the keypress detection fsm</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/transitiontable.jpg" class="img-fluid figure-img"></p>
+<figcaption>Figure. 5 State Transition Table for the keypress detection fsm</figcaption>
+</figure>
+</div>
+</section>
+<section id="hdl-code" class="level3">
+<h3 class="anchored" data-anchor-id="hdl-code">HDL Code</h3>
+<p><a href="https://github.com/aabhassenapati/E155-labs/tree/main/lab3/fpga">Can be found on github repository</a></p>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab3_hardware.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 6: Hardware Setup working</figcaption>
+</figure>
+</div>
+<section id="testbench-simulation-results" class="level3">
+<h3 class="anchored" data-anchor-id="testbench-simulation-results">Testbench Simulation Results</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_top_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 7: Waveforms for top module lab3_as</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_cd_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 8: Waveforms for module clock_divider</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_pc_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 9: Waveforms for module power_counter</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_sc_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 10: Waveforms for module scan_counter</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_rk_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 11: Waveforms for module read_keys</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_kdf_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 12: Waveforms for module keypress_detection_fsm</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_se_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 13: Waveforms for module seg_enabler</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_sd_waveforms.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 14: Waveforms for module seg_display</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_top_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 15: Testbench output for top module lab3_as</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_cd_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 16: Testbench output for module clock_divider</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_pc_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 17: Testbench output for module power_counter</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_sc_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 18: Testbench output for module scan_counter</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_rk_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 19: Testbench output for module read_keys</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_kdf_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 20: Testbench output for module keypress_detection_fsm</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_se_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 21: Testbench output for module seg_enabler</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tb_sd_output.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 22: Testbench output for module seg_display</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>I was able to succesfully achieve all the goals for this lab to read all the different key inputs from the 4*4 keypad, with debouncing so that it never double registers a key press, and also doesn’t register multiple keypresses, untill the initially clicked keys are released. I think it was very intresting to think about the debouncing logic and implementing in the hardware, especially how in some places different aspects like paralllelizing the logic can be critical to not violate setup time constrains in case of complexx logic, and other possible synchronization errors that can happen with asynchronous input to the system. I was very happy to be able to make my initial design work in the first attempt itself except some fine tuning for time, and in further labs I would like to think more about making my logic more efficient as well. I spent about 25 hours on this lab.</p>
+</section>
+<section id="ai-prototype" class="level2">
+<h2 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h2>
+<p>Upon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code. It also turns out the synthesis that AI generated was much more resource efficient and used much lesser LUTs onboard, thus it hints that AI could be a great tool to increase efficiency of designs. I also think that the AI is limited in terms of ability to get feedback from real-time deployment of design onto hardware and thus nudge it in terms of timing and other nuance which it might lack.</p>
+<p><img src="images/ai_rtl1.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ai_rtl2.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 14: RTL synthesis for AI generated Code</figcaption>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

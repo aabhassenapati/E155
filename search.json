@@ -147,6 +147,55 @@
     "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code had an error as it was trying to load an clock/oscillator module that we were possibly missing, but feeding back the error into Claude, it solved it and generated code that was able to synthesize design as below, it solved the issue my writing that primitive module for clock generation by itself instead of using a library. I confirmed the design its the RTL syntehsis and it seemed good to me. I think it kind of shows that AI is a really powerful tool to use in hardware related projects, especially if used by a person how these things piece together and work, which helps in better interacting with I model and the prompts.\n\n\n\nFig. n: RTL synthesis for AI generated Code"
   },
   {
+    "objectID": "labs/lab3/lab3.html",
+    "href": "labs/lab3/lab3.html",
+    "title": "Lab 3: Keypad Scanner",
+    "section": "",
+    "text": "I this lab I try to design a system that can read inputs from a 4*4 keypad through debouncing the inputs, and display the entered digits with time multiplexing on a dual seven segment display displaying inputs."
+  },
+  {
+    "objectID": "labs/lab3/lab3.html#introduction",
+    "href": "labs/lab3/lab3.html#introduction",
+    "title": "Lab 3: Keypad Scanner",
+    "section": "",
+    "text": "I this lab I try to design a system that can read inputs from a 4*4 keypad through debouncing the inputs, and display the entered digits with time multiplexing on a dual seven segment display displaying inputs."
+  },
+  {
+    "objectID": "labs/lab3/lab3.html#design-and-testing-methodology",
+    "href": "labs/lab3/lab3.html#design-and-testing-methodology",
+    "title": "Lab 3: Keypad Scanner",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nI designed 8 modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal into lower frequencies as need, module to have counters keeping track of what keys are pressed, and fsm module that determine which key press to assert and synchronize it to the display, and module to drive the segment enablers and digits.\nMy specific design approach was to power the 4 rows of the keypad one by one on a divide by 4 counter, and then read all the four corresponding column inputs while powering the respective rows, and check if the switch is pressed by looking for a high and increment a counter. My logic for the debouncing of switch press, to detect it accurately was that, if my sampling is fast enough (24Mhz, lower should also work), and the sampling period appropriately small enough chosen (50ms/20Hz), to reset the counters, I can find out which key was pressed, based on the counter with highest value, that would be the actual key pressed, as if any key is pressed later, it would have a lower counter value for being detected as on. The highest counter value is then provided to the keypress detection fsm which when the highest counter is above a certain threshold, it registers it as a valid input, and makes it a locked counter, and outputs a key_pressed pulse, and the key id and gives it to the display moudle. This helps both debounce and synchronize the inputs into our system before they reach the segments. The fsm stays in locked state, untill the locked key has counter value above threshold, and when it goes below threshold it registers it as switch release and thus goes back to idle state to detect new inputs. For the segments, I drive the multiplexer at 240Hz, to enable one segment on clock high and other on low, and then the key pressed pulse, and key_pressed signals from the fsm go to the segment display to update the digits each time a new key press is detected.\nMy calculations for resistor values used in the circuit to connect inputs, seven-segment, and transistors can be found as below.\n\n\n\n\nFig. 1: Calculations for resistor values"
+  },
+  {
+    "objectID": "labs/lab3/lab3.html#technical-documentation",
+    "href": "labs/lab3/lab3.html#technical-documentation",
+    "title": "Lab 3: Keypad Scanner",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\n\nBlock Diagram\n\n\n\nFig. 2: Block Diagram for top module “lab2_as”\n\n\n\n\nSchematic\n\n\n\nFig. 3: Schematic for Hardware Setup\n\n\n\n\nState Transition Diagram and Table\n\n\n\nFigure. 4 State Transition Diagram for the keypress detection fsm\n\n\n\n\n\nFigure. 5 State Transition Table for the keypress detection fsm\n\n\n\n\nHDL Code\nCan be found on github repository"
+  },
+  {
+    "objectID": "labs/lab3/lab3.html#results-and-discussion",
+    "href": "labs/lab3/lab3.html#results-and-discussion",
+    "title": "Lab 3: Keypad Scanner",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\n\n\nFig. 6: Hardware Setup working\n\n\n\nTestbench Simulation Results\n\n\n\nFig. 7: Waveforms for top module lab3_as\n\n\n\n\n\nFig. 8: Waveforms for module clock_divider\n\n\n\n\n\nFig. 9: Waveforms for module power_counter\n\n\n\n\n\nFig. 10: Waveforms for module scan_counter\n\n\n\n\n\nFig. 11: Waveforms for module read_keys\n\n\n\n\n\nFig. 12: Waveforms for module keypress_detection_fsm\n\n\n\n\n\nFig. 13: Waveforms for module seg_enabler\n\n\n\n\n\nFig. 14: Waveforms for module seg_display\n\n\n\n\n\nFig. 15: Testbench output for top module lab3_as\n\n\n\n\n\nFig. 16: Testbench output for module clock_divider\n\n\n\n\n\nFig. 17: Testbench output for module power_counter\n\n\n\n\n\nFig. 18: Testbench output for module scan_counter\n\n\n\n\n\nFig. 19: Testbench output for module read_keys\n\n\n\n\n\nFig. 20: Testbench output for module keypress_detection_fsm\n\n\n\n\n\nFig. 21: Testbench output for module seg_enabler\n\n\n\n\n\nFig. 22: Testbench output for module seg_display"
+  },
+  {
+    "objectID": "labs/lab3/lab3.html#conclusion",
+    "href": "labs/lab3/lab3.html#conclusion",
+    "title": "Lab 3: Keypad Scanner",
+    "section": "Conclusion",
+    "text": "Conclusion\nI was able to succesfully achieve all the goals for this lab to read all the different key inputs from the 4*4 keypad, with debouncing so that it never double registers a key press, and also doesn’t register multiple keypresses, untill the initially clicked keys are released. I think it was very intresting to think about the debouncing logic and implementing in the hardware, especially how in some places different aspects like paralllelizing the logic can be critical to not violate setup time constrains in case of complexx logic, and other possible synchronization errors that can happen with asynchronous input to the system. I was very happy to be able to make my initial design work in the first attempt itself except some fine tuning for time, and in further labs I would like to think more about making my logic more efficient as well. I spent about 25 hours on this lab."
+  },
+  {
+    "objectID": "labs/lab3/lab3.html#ai-prototype",
+    "href": "labs/lab3/lab3.html#ai-prototype",
+    "title": "Lab 3: Keypad Scanner",
+    "section": "AI Prototype",
+    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code. It also turns out the synthesis that AI generated was much more resource efficient and used much lesser LUTs onboard, thus it hints that AI could be a great tool to increase efficiency of designs. I also think that the AI is limited in terms of ability to get feedback from real-time deployment of design onto hardware and thus nudge it in terms of timing and other nuance which it might lack.\n\n\n\n\nFig. 14: RTL synthesis for AI generated Code"
+  },
+  {
     "objectID": "posts/initial-reflections.html",
     "href": "posts/initial-reflections.html",
     "title": "Initial Reflections",
