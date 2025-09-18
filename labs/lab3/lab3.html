@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I designed 8 modules in Verilog to implement my hardware on the FPGA, where my top module interfaces with the modules that divide the clock signal into lower frequencies as need, module to have counters keeping track of what keys are pressed, and fsm module that determine which key press to assert and synchronize it to the display, and module to drive the segment enablers and digits.</p>
 <p>My specific design approach was to power the 4 rows of the keypad one by one on a divide by 4 counter, and then read all the four corresponding column inputs while powering the respective rows, and check if the switch is pressed by looking for a high and increment a counter. My logic for the debouncing of switch press, to detect it accurately was that, if my sampling is fast enough (24Mhz, lower should also work), and the sampling period appropriately small enough chosen (50ms/20Hz), to reset the counters, I can find out which key was pressed, based on the counter with highest value, that would be the actual key pressed, as if any key is pressed later, it would have a lower counter value for being detected as on. The highest counter value is then provided to the keypress detection fsm which when the highest counter is above a certain threshold, it registers it as a valid input, and makes it a locked counter, and outputs a key_pressed pulse, and the key id and gives it to the display moudle. This helps both debounce and synchronize the inputs into our system before they reach the segments. The fsm stays in locked state, untill the locked key has counter value above threshold, and when it goes below threshold it registers it as switch release and thus goes back to idle state to detect new inputs. For the segments, I drive the multiplexer at 240Hz, to enable one segment on clock high and other on low, and then the key pressed pulse, and key_pressed signals from the fsm go to the segment display to update the digits each time a new key press is detected.</p>
 <p>My calculations for resistor values used in the circuit to connect inputs, seven-segment, and transistors can be found as below.</p>
-<p><img src="images/lab2_calculation1.jpg" class="img-fluid"></p>
+<p><img src="images/lab3_calculation0.jpg" class="img-fluid"></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab2_calculation1.jpg" class="img-fluid figure-img"></p>
@@ -365,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ai_rtl2.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. 14: RTL synthesis for AI generated Code</figcaption>
+<figcaption>Fig. 23: RTL synthesis for AI generated Code</figcaption>
 </figure>
 </div>
 
