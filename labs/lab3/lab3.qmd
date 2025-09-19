@@ -40,24 +40,27 @@ I think my design was pretty simple to think about in terms of logical flow, and
 ![Fig. 3: Schematic for Hardware Setup](images/lab3_schematic.jpg)
 
 ### State Transition Diagram and Table
+![](images/fsm0.jpg)
+![](images/fsm1.jpg)
+![Figure. 4 State Transition Diagram for the power_counter fsm, read_keys fsm and keypress detection fsm](images/fsm2.jpg)
 
-![Figure. 4 State Transition Diagram for the keypress detection fsm](images/fsm.jpg)
-
-![Figure. 5 State Transition Table for the keypress detection fsm](images/transitiontable.jpg)
+![](images/transitiontable0.jpg)
+![](images/transitiontable1.jpg)
+![Figure. 5 State Transition Table for the power_counter fsm, read_keys fsm and keypress detection fsm](images/transitiontable2.jpg)
 
 ### HDL Code
 
 [Can be found on github repository](https://github.com/aabhassenapati/E155-labs/tree/main/lab3/fpga)
 
-<script src="https://gist.github.com/aabhassenapati/ee0b474a1e443da6c27e01b50863a6a4.js"></script>
+<script src="https://gist.github.com/aabhassenapati/befb30ad17991d8b391cf60530fa9dce.js"></script>
 
 <script src="https://gist.github.com/aabhassenapati/f392c8c00f720906aad23f97a5dc2fe7.js"></script>
 
-<script src="https://gist.github.com/aabhassenapati/3030b4ccc1fb40591c4cf6c6757a5763.js"></script>
+<script src="https://gist.github.com/aabhassenapati/0df92b0f0d819a72a4e63207f37d6485.js"></script>
 
 <script src="https://gist.github.com/aabhassenapati/88ab956f47daf057dbb98d1782bce34d.js"></script>
 
-<script src="https://gist.github.com/aabhassenapati/c5f693f55bd82e467f2caed40f9ea3bb.js"></script>
+<script src="https://gist.github.com/aabhassenapati/78e8fbfad51bba2a59eb271122e049ae.js"></script>
 
 <script src="https://gist.github.com/aabhassenapati/671965134589f05adcb682a3042d2def.js"></script>
 
