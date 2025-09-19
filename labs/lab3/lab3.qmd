@@ -32,7 +32,7 @@ I think my design was pretty simple to think about in terms of logical flow, and
 
 ### Block Diagram
 
-![Fig. 2: Block Diagram for top module "lab3_as"](images/lab3_block_diagram.jpg) 
+![Fig. 2: Block Diagram for top module "lab3_as"](images/lab3_block_diagram.png) 
 
 
 ### Schematic
