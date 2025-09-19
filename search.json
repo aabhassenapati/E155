@@ -172,7 +172,7 @@
     "href": "labs/lab3/lab3.html#technical-documentation",
     "title": "Lab 3: Keypad Scanner",
     "section": "Technical Documentation",
-    "text": "Technical Documentation\n\nBlock Diagram\n\n\n\nFig. 2: Block Diagram for top module “lab3_as”\n\n\n\n\nSchematic\n\n\n\nFig. 3: Schematic for Hardware Setup\n\n\n\n\nState Transition Diagram and Table\n  \n  \n\n\nHDL Code\nCan be found on github repository"
+    "text": "Technical Documentation\n\nBlock Diagram\n\n\n\nFig. 2: Block Diagram for top module “lab3_as”\n\n\n\n\nSchematic\n\n\n\nFig. 3: Schematic for Hardware Setup\n\n\n\n\nState Transition Diagram and Table\n\n\n\nFigure. 4aState Transition Diagram for the power_counter fsm\n\n\n\n\n\nFigure. 4b State Transition Diagram for the read_keys fsm\n\n\n\n\n\nFigure. 4c State Transition Diagram for the keypress detection fsm\n\n\n\n\n\nFigure. 5a State Transition Table for the power_counter fsm\n\n\n\n\n\nFigure. 5b State Transition Table for the read_keys fsm\n\n\n\n\n\nFigure. 5c State Transition Table for the keypress detection fsm\n\n\n\n\nHDL Code\nCan be found on github repository"
   },
   {
     "objectID": "labs/lab3/lab3.html#results-and-discussion",
