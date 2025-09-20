@@ -40,13 +40,18 @@ I think my design was pretty simple to think about in terms of logical flow, and
 ![Fig. 3: Schematic for Hardware Setup](images/lab3_schematic.jpg)
 
 ### State Transition Diagram and Table
-![](images/fsm0.jpg)
-![](images/fsm1.jpg)
-![Figure. 4 State Transition Diagram for the power_counter fsm, read_keys fsm and keypress detection fsm](images/fsm2.jpg)
 
-![](images/transitiontable0.jpg)
-![](images/transitiontable1.jpg)
-![Figure. 5 State Transition Table for the power_counter fsm, read_keys fsm and keypress detection fsm](images/transitiontable2.jpg)
+![Figure. 4aState Transition Diagram for the power_counter fsm](images/fsm0.jpg)
+
+![Figure. 4b State Transition Diagram for the read_keys fsm](images/fsm1.jpg)
+
+![Figure. 4c State Transition Diagram for the keypress detection fsm](images/fsm2.jpg)
+
+![Figure. 5a State Transition Table for the power_counter fsm](images/transitiontable0.jpg)
+
+![Figure. 5b State Transition Table for the read_keys fsm](images/transitiontable1.jpg)
+
+![Figure. 5c State Transition Table for the keypress detection fsm](images/transitiontable2.jpg)
 
 ### HDL Code
 
