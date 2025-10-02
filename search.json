@@ -49,6 +49,55 @@
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
+    "objectID": "labs/lab4/lab4.html",
+    "href": "labs/lab4/lab4.html",
+    "title": "Lab 4: Digital Audio",
+    "section": "",
+    "text": "I this lab I try to design a system that can play songs with desired frequencies, as specified, by generating square waves using pwm functionality of timers on the mcu."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#introduction",
+    "href": "labs/lab4/lab4.html#introduction",
+    "title": "Lab 4: Digital Audio",
+    "section": "",
+    "text": "I this lab I try to design a system that can play songs with desired frequencies, as specified, by generating square waves using pwm functionality of timers on the mcu."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#design-and-testing-methodology",
+    "href": "labs/lab4/lab4.html#design-and-testing-methodology",
+    "title": "Lab 4: Digital Audio",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nI\nMy calculations for minimum and maximum frequency that can be played can be found as below.\n\n\n\n\nFig. 1: Calculations"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#technical-documentation",
+    "href": "labs/lab4/lab4.html#technical-documentation",
+    "title": "Lab 4: Digital Audio",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\n\nSchematic\n\n\n\nFig. 3: Schematic for Hardware Setup\n\n\n\n\nC Code and Header Files\nCan be found on github repository"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#results-and-discussion",
+    "href": "labs/lab4/lab4.html#results-and-discussion",
+    "title": "Lab 4: Digital Audio",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\n\n\nFig. 6: Hardware Setup working\n\n\n\nOscilloscope Waveform and Frequency Verification\n\n\n\nFig. 7: Waveforms for top module lab3_as"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#conclusion",
+    "href": "labs/lab4/lab4.html#conclusion",
+    "title": "Lab 4: Digital Audio",
+    "section": "Conclusion",
+    "text": "Conclusion\nI was able to succesfully achieve all the goals for this lab to play the desired songs using the timers on microcontroller. I spent about 15 hours on this lab."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#ai-prototype",
+    "href": "labs/lab4/lab4.html#ai-prototype",
+    "title": "Lab 4: Digital Audio",
+    "section": "AI Prototype",
+    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code. It also turns out the synthesis that AI generated was much more resource efficient and used much lesser LUTs onboard, thus it hints that AI could be a great tool to increase efficiency of designs. I also think that the AI is limited in terms of ability to get feedback from real-time deployment of design onto hardware and thus nudge it in terms of timing and other nuance which it might lack.\n\n\n\n\nFig. 23: RTL synthesis for AI generated Code"
+  },
+  {
     "objectID": "labs/lab2/lab2.html",
     "href": "labs/lab2/lab2.html",
     "title": "Lab 2: Multiplexed 7-Segment Display",
