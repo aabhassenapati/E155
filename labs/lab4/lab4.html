@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="design-and-testing-methodology" class="level2">
 <h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
-<p>I</p>
+<p>For the design of this, I used examples tutorial clock setup done in class, to configure Flash, Clock and GPIO on the microcontroller. Once the basic setup worked with blinking LED, I wrote header filers to use the Timer 15 and 16 periperhals, and then wrote c functions to use the onboard timers to delay to hold the pwm signal, and generate a pwm singal of variable frequencies respectively, and then in the main c file, I enabled GPIO A6, configured it with the timer output, and played the desired notes for songs using the c functions, by connecting it to a 8-ohm speaker using an lm386 audio amplifier with a gain of 20.</p>
 <p>My calculations for minimum and maximum frequency that can be played can be found as below.</p>
 <p><img src="images/lab4_calculation0.jpg" class="img-fluid"></p>
 <div class="quarto-figure quarto-figure-center">
@@ -231,8 +231,26 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="oscilloscope-waveform-and-frequency-verification">Oscilloscope Waveform and Frequency Verification</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/tb_top_waveforms.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. 7: Waveforms for top module lab3_as</figcaption>
+<p><img src="images/oscope1.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 7: Frequency of first note measured on Oscilloscope</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope2.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 7: Frequency of second note measured on Oscilloscope</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope3.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 7: Frequency of 200Hz signal forced measured on Oscilloscope</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope4.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 7: Frequency of 1000Hz signal forced measured on Oscilloscope</figcaption>
 </figure>
 </div>
 </section>
@@ -243,12 +261,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ai-prototype" class="level2">
 <h2 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h2>
-<p>Upon entering the given prompt the initial AI generated code that syntehsized on first go itself, for both the prompts, this shows the versatality of these tools to not only geenrate fresh code, but also use our code, and adapt its logic to build upon it, which is very helpful in real world project development, where nothing is built from scratch but rather a progressive increment on existing work. It is pretty cool to see how easily can AI accelerate the workflow for hardware development related projects. I am attaching below RTL synthesis for the AI geenrated code. It also turns out the synthesis that AI generated was much more resource efficient and used much lesser LUTs onboard, thus it hints that AI could be a great tool to increase efficiency of designs. I also think that the AI is limited in terms of ability to get feedback from real-time deployment of design onto hardware and thus nudge it in terms of timing and other nuance which it might lack.</p>
-<p><img src="images/ai.png" class="img-fluid"></p>
+<p>Upon entering the given prompt the initial AI generated a response that suggested using TIM 2, but also suggested that other Timers like 15, and 16 could also be used, and then gave me a rough draft plan for how to approach for TIM2, upon providing the reference manual it was able to even better analyze and provide more detailed information what registers need to be enabled. But there are other things that it doesn’t consider like every gpio might not be avialable to us in our pinout etc, so while AI would be great tool to scan and search through reference manual, it would be usable much better when being dealt with by someone who knows what their hardware is, and things that AI could not consider. Seems like this would definitely accelerate the process of going through a reference manual and datasheet, while it might miss some specifics, which might require human in the loop.</p>
+<p><img src="images/ai1.png" class="img-fluid"></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/ai.png" class="img-fluid figure-img"></p>
-<figcaption>Fig. 23: RTL synthesis for AI generated Code</figcaption>
+<p><img src="images/ai2.png" class="img-fluid figure-img"></p>
+<figcaption>Fig. 23: Response by Claude AI before and after providing the reference manual</figcaption>
 </figure>
 </div>
 
