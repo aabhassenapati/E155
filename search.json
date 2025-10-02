@@ -81,7 +81,7 @@
     "href": "labs/lab4/lab4.html#results-and-discussion",
     "title": "Lab 4: Digital Audio",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\n\n\n\nFig. 6: Hardware Setup working\n\n\n\nOscilloscope Waveform and Frequency Verification\n\n\n\nFig. 7: Frequency of first note measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of second note measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of 200Hz signal forced measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of 1000Hz signal forced measured on Oscilloscope"
+    "text": "Results and Discussion\nI was able to play both the songs the Fur Elise tune that was provided, and the Mary had a Little Lamb song I transposed. I also verified that I was able to get accurate frequencies being played, I verified it for my boundary frequencies of 200 and 1000Hz as specified in the specs, which had no error, while for the frequency values, of first and second note, expected frequency was 659 Hz and 623Hz while I observed it to be 658 Hz and 625 Hz respectively on the oscilloscope, both of which are within 1% error value, and can be accounted due to rounding of values, due to not perfect division of the clock signal.\n\n\n\nFig. 6: Hardware Setup working\n\n\n\nOscilloscope Waveform and Frequency Verification\n\n\n\nFig. 7: Frequency of first note measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of second note measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of 200Hz signal forced measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of 1000Hz signal forced measured on Oscilloscope"
   },
   {
     "objectID": "labs/lab4/lab4.html#conclusion",
