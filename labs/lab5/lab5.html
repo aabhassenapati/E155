@@ -6,6 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aabhas Senapati">
+<meta name="dcterms.date" content="2025-10-09">
+<meta name="description" content="Here I document my work on the lab 5 of MicroPs, where I work with STM32 microcontroller, to measure speed of a motor using rotary encoder and interrupts">
 
 <title>Lab 5: Interrupts – E155 Portfolio</title>
 <style>
@@ -119,8 +122,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#flowchart" id="toc-flowchart" class="nav-link" data-scroll-target="#flowchart">Flowchart</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#c-code-and-header-files" id="toc-c-code-and-header-files" class="nav-link" data-scroll-target="#c-code-and-header-files">C Code and Header Files</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#oscilloscope-traces-for-sampling-frequency-verification" id="toc-oscilloscope-traces-for-sampling-frequency-verification" class="nav-link" data-scroll-target="#oscilloscope-traces-for-sampling-frequency-verification">Oscilloscope traces for Sampling Frequency Verification</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-prototype" id="toc-ai-prototype" class="nav-link" data-scroll-target="#ai-prototype">AI Prototype</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -128,13 +150,35 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 5: Interrupts</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">labs</div>
+    <div class="quarto-category">MCU</div>
+    <div class="quarto-category">e155</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Here I document my work on the lab 5 of MicroPs, where I work with STM32 microcontroller, to measure speed of a motor using rotary encoder and interrupts
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aabhas Senapati </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 9, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -144,8 +188,96 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>I this lab I try to design a system that can measure the speed of a motor using rotary encoder to trigger event interrupts on the mcu.</p>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>For the design of this, I used examples interrupt tutorial done in class, to configure Interrupt, Timers, Flash, Clock and GPIO on the microcontroller, I used those libraries given to us to further develop my design. Once the basic setup worked with button interrupt and the LED, I wrote interrupt handlers for Encoder A and Encoder B to check for direction of the rotation, and also calculate the speed based on the number of pulses I measure every second.</p>
+<p>My calculations for verifying the pulses measured and the revolutions per second output by the device.</p>
+<p><img src="images/lab5_calculation0.jpg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab5_calculation1.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 1: Calculations</figcaption>
+</figure>
+</div>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<section id="flowchart" class="level3">
+<h3 class="anchored" data-anchor-id="flowchart">Flowchart</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab5_flowchart.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 2: Flowchart for Rotary Encoder Inputs and main program</figcaption>
+</figure>
+</div>
+</section>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab5_schematic.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 3: Schematic for Hardware Setup</figcaption>
+</figure>
+</div>
+</section>
+<section id="c-code-and-header-files" class="level3">
+<h3 class="anchored" data-anchor-id="c-code-and-header-files">C Code and Header Files</h3>
+<p><a href="https://github.com/aabhassenapati/E155-labs/tree/main/lab5/mcu">Can be found on github repository</a></p>
+<script src="https://gist.github.com/aabhassenapati/e0d745123a61c20445b2e5e54375fd86.js"></script>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<p>I was able to measure the speed of the rotoary encoder very accurately and able to display it on the debug terminal, I also verified that I was able to read all the edges from the encoders using oscilloscope traces and printing out my count values.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab5_hardware.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 4: Hardware Setup working</figcaption>
+</figure>
+</div>
+<section id="oscilloscope-traces-for-sampling-frequency-verification" class="level3">
+<h3 class="anchored" data-anchor-id="oscilloscope-traces-for-sampling-frequency-verification">Oscilloscope traces for Sampling Frequency Verification</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope1.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 5: Frequency of first note measured on Oscilloscope</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope2.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 6: Frequency of second note measured on Oscilloscope</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope3.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 7: Frequency of 200Hz signal forced measured on Oscilloscope</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscope4.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fig. 8: Frequency of 1000Hz signal forced measured on Oscilloscope</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>I was able to succesfully achieve all the goals for this lab to measure all of the desired speeds of motor using rotary encoder and display it, and verified it to be correct, and compared it to polling as well. I spent about 10 hours on this lab. It was a good experience using the existing headers and libraries for this lab, and then just implementing my design, as the main focus of this lab. Also being able to comapre different approaches like polling vs intterrupts was helpful to learn benefits and limitations for these different approaches.</p>
+</section>
+<section id="ai-prototype" class="level2">
+<h2 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h2>
+<p>Upon entering the given prompt the initial AI generated a response, which used pins that were not 5V tolerant, and also was using timers in encoder mode to get the design to work, but this had limitations especially with which pins can be used, then I used it to give it feedback about the constrainsts and also details about pulses per revolution based on our encoder, and then it was able to incorporate it to its design, and choose appropriate pins, which would work. I think it shows that while AI is a good tool, you need to have the knowledge of your system and design to use it to its fullest capabilities.</p>
+<script src="https://gist.github.com/aabhassenapati/c7a07887080a7539f484e10d7073de96.js"></script>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

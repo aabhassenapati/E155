@@ -196,6 +196,55 @@
     "text": "AI Prototype\nUpon entering the given prompt the initial AI generated code had an error as it was trying to load an clock/oscillator module that we were possibly missing, but feeding back the error into Claude, it solved it and generated code that was able to synthesize design as below, it solved the issue my writing that primitive module for clock generation by itself instead of using a library. I confirmed the design its the RTL syntehsis and it seemed good to me. I think it kind of shows that AI is a really powerful tool to use in hardware related projects, especially if used by a person how these things piece together and work, which helps in better interacting with I model and the prompts.\n\n\n\nFig. n: RTL synthesis for AI generated Code"
   },
   {
+    "objectID": "labs/lab5/lab5.html",
+    "href": "labs/lab5/lab5.html",
+    "title": "Lab 5: Interrupts",
+    "section": "",
+    "text": "I this lab I try to design a system that can measure the speed of a motor using rotary encoder to trigger event interrupts on the mcu."
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#introduction",
+    "href": "labs/lab5/lab5.html#introduction",
+    "title": "Lab 5: Interrupts",
+    "section": "",
+    "text": "I this lab I try to design a system that can measure the speed of a motor using rotary encoder to trigger event interrupts on the mcu."
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#design-and-testing-methodology",
+    "href": "labs/lab5/lab5.html#design-and-testing-methodology",
+    "title": "Lab 5: Interrupts",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nFor the design of this, I used examples interrupt tutorial done in class, to configure Interrupt, Timers, Flash, Clock and GPIO on the microcontroller, I used those libraries given to us to further develop my design. Once the basic setup worked with button interrupt and the LED, I wrote interrupt handlers for Encoder A and Encoder B to check for direction of the rotation, and also calculate the speed based on the number of pulses I measure every second.\nMy calculations for verifying the pulses measured and the revolutions per second output by the device.\n\n\n\n\nFig. 1: Calculations"
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#technical-documentation",
+    "href": "labs/lab5/lab5.html#technical-documentation",
+    "title": "Lab 5: Interrupts",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\n\nFlowchart\n\n\n\nFig. 2: Flowchart for Rotary Encoder Inputs and main program\n\n\n\n\nSchematic\n\n\n\nFig. 3: Schematic for Hardware Setup\n\n\n\n\nC Code and Header Files\nCan be found on github repository"
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#results-and-discussion",
+    "href": "labs/lab5/lab5.html#results-and-discussion",
+    "title": "Lab 5: Interrupts",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nI was able to measure the speed of the rotoary encoder very accurately and able to display it on the debug terminal, I also verified that I was able to read all the edges from the encoders using oscilloscope traces and printing out my count values.\n\n\n\nFig. 4: Hardware Setup working\n\n\n\nOscilloscope traces for Sampling Frequency Verification\n\n\n\nFig. 5: Frequency of first note measured on Oscilloscope\n\n\n\n\n\nFig. 6: Frequency of second note measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of 200Hz signal forced measured on Oscilloscope\n\n\n\n\n\nFig. 8: Frequency of 1000Hz signal forced measured on Oscilloscope"
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#conclusion",
+    "href": "labs/lab5/lab5.html#conclusion",
+    "title": "Lab 5: Interrupts",
+    "section": "Conclusion",
+    "text": "Conclusion\nI was able to succesfully achieve all the goals for this lab to measure all of the desired speeds of motor using rotary encoder and display it, and verified it to be correct, and compared it to polling as well. I spent about 10 hours on this lab. It was a good experience using the existing headers and libraries for this lab, and then just implementing my design, as the main focus of this lab. Also being able to comapre different approaches like polling vs intterrupts was helpful to learn benefits and limitations for these different approaches."
+  },
+  {
+    "objectID": "labs/lab5/lab5.html#ai-prototype",
+    "href": "labs/lab5/lab5.html#ai-prototype",
+    "title": "Lab 5: Interrupts",
+    "section": "AI Prototype",
+    "text": "AI Prototype\nUpon entering the given prompt the initial AI generated a response, which used pins that were not 5V tolerant, and also was using timers in encoder mode to get the design to work, but this had limitations especially with which pins can be used, then I used it to give it feedback about the constrainsts and also details about pulses per revolution based on our encoder, and then it was able to incorporate it to its design, and choose appropriate pins, which would work. I think it shows that while AI is a good tool, you need to have the knowledge of your system and design to use it to its fullest capabilities."
+  },
+  {
     "objectID": "labs/lab3/lab3.html",
     "href": "labs/lab3/lab3.html",
     "title": "Lab 3: Keypad Scanner",
