@@ -214,7 +214,7 @@
     "href": "labs/lab5/lab5.html#design-and-testing-methodology",
     "title": "Lab 5: Interrupts",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nFor the design of this, I used examples interrupt tutorial done in class, to configure Interrupt, Timers, Flash, Clock and GPIO on the microcontroller, I used those libraries given to us to further develop my design. Once the basic setup worked with button interrupt and the LED, I wrote interrupt handlers for Encoder A and Encoder B to check for direction of the rotation, and also calculate the speed based on the number of pulses I measure every second.\nMy calculations for verifying the pulses measured and the revolutions per second output by the device.\n\n\n\n\nFig. 1: Calculations"
+    "text": "Design and Testing Methodology\nFor the design of this, I used examples interrupt tutorial done in class, to configure Interrupt, Timers, Flash, Clock and GPIO on the microcontroller, I used those libraries given to us to further develop my design. Once the basic setup worked with button interrupt and the LED, I wrote interrupt handlers for Encoder A and Encoder B to check for direction of the rotation, and also calculate the speed based on the number of pulses I measure every second.\nMy calculations for verifying the pulses measured and the revolutions per second output by the device.\n\n\n\nFig. 1: Calculations"
   },
   {
     "objectID": "labs/lab5/lab5.html#technical-documentation",
@@ -228,7 +228,7 @@
     "href": "labs/lab5/lab5.html#results-and-discussion",
     "title": "Lab 5: Interrupts",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nI was able to measure the speed of the rotoary encoder very accurately and able to display it on the debug terminal, I also verified that I was able to read all the edges from the encoders using oscilloscope traces and printing out my count values.\n\n\n\nFig. 4: Hardware Setup working\n\n\n\nOscilloscope traces for Sampling Frequency Verification\n\n\n\nFig. 5: Polling with empty loop, just GPIO toggle\n\n\n\n\n\nFig. 6: Polling with usual loop, without delay\n\n\n\n\n\nFig. 7: Latency of Interrupt signal\n\n\n\n\n\nFig. 8: Duration of Completing the Interrupt handling"
+    "text": "Results and Discussion\nI was able to measure the speed of the rotoary encoder very accurately and able to display it on the debug terminal, I also verified that I was able to read all the edges from the encoders using oscilloscope traces and printing out my count values.\n \n\nOscilloscope traces for Sampling Frequency Verification\n\n\n\nFig. 5: Polling with empty loop, just GPIO toggle\n\n\n\n\n\nFig. 6: Polling with usual loop, without delay\n\n\n\n\n\nFig. 7: Latency of Interrupt signal\n\n\n\n\n\nFig. 8: Duration of Completing the Interrupt handling"
   },
   {
     "objectID": "labs/lab5/lab5.html#conclusion",
