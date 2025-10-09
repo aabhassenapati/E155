@@ -228,7 +228,7 @@
     "href": "labs/lab5/lab5.html#results-and-discussion",
     "title": "Lab 5: Interrupts",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nI was able to measure the speed of the rotoary encoder very accurately and able to display it on the debug terminal, I also verified that I was able to read all the edges from the encoders using oscilloscope traces and printing out my count values.\n\n\n\nFig. 4: Hardware Setup working\n\n\n\nOscilloscope traces for Sampling Frequency Verification\n\n\n\nFig. 5: Frequency of first note measured on Oscilloscope\n\n\n\n\n\nFig. 6: Frequency of second note measured on Oscilloscope\n\n\n\n\n\nFig. 7: Frequency of 200Hz signal forced measured on Oscilloscope\n\n\n\n\n\nFig. 8: Frequency of 1000Hz signal forced measured on Oscilloscope"
+    "text": "Results and Discussion\nI was able to measure the speed of the rotoary encoder very accurately and able to display it on the debug terminal, I also verified that I was able to read all the edges from the encoders using oscilloscope traces and printing out my count values.\n\n\n\nFig. 4: Hardware Setup working\n\n\n\nOscilloscope traces for Sampling Frequency Verification\n\n\n\nFig. 5: Polling with empty loop, just GPIO toggle\n\n\n\n\n\nFig. 6: Polling with usual loop, without delay\n\n\n\n\n\nFig. 7: Latency of Interrupt signal\n\n\n\n\n\nFig. 8: Duration of Completing the Interrupt handling"
   },
   {
     "objectID": "labs/lab5/lab5.html#conclusion",
