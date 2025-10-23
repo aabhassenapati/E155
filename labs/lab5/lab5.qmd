@@ -12,7 +12,7 @@ draft: false
 
 ## Introduction
 
-I this lab I try to design a system that can measure the speed of a motor using rotary encoder to trigger event interrupts on the mcu. 
+In this lab I try to design a system that can measure the speed of a motor using rotary encoder to trigger event interrupts on the mcu. 
 
 ## Design and Testing Methodology
  For the design of this, I used examples interrupt tutorial done in class, to configure Interrupt, Timers, Flash, Clock and GPIO on the microcontroller, I used those libraries given to us to further develop my design. Once the basic setup worked with button interrupt and the LED, I wrote interrupt handlers for Encoder A and Encoder B to check for direction of the rotation, and also calculate the speed based on the number of pulses I measure every second.
