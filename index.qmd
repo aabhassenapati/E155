@@ -15,4 +15,4 @@ about:
         href: https://aabhass.in
 ---
 
-Aabhas is a Junior at [Harvey Mudd College](https://hmc.edu), studying Electrical Engineering and Biology.
+Aabhas is a Senior at [Harvey Mudd College](https://hmc.edu), studying Electrical Engineering and Biology.
